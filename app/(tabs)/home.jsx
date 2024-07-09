@@ -3,7 +3,7 @@ import React from "react";
 
 const Home = () => {
   return (
-    <View>
+    <View className="text-xl justify-center text-center">
       <Text>Home</Text>
     </View>
   );
