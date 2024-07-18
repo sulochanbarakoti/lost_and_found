@@ -7,12 +7,13 @@ const CustomeButton = ({
   containerStyle,
   textStyle,
   isLoading,
+  icon,
 }) => {
   return (
     <TouchableOpacity
       onPress={handlePress}
       activeOpacity={0.7}
-      className={`bg-white rounded-xl min-h-[62px] justify-center items-center ${containerStyle} ${
+      className={`bg-primary rounded-xl min-h-[62px] justify-center items-center ${containerStyle} ${
         isLoading ? "opacity-50" : ""
       } `}
       disabled={isLoading}
