@@ -8,7 +8,7 @@ import { router } from "expo-router";
 
 export default function App() {
   return (
-    <SafeAreaView className="h-full flex-1">
+    <SafeAreaView className="h-full flex-1 bg-tertiary">
       <ImageBackground
         source={images.backgroundImage}
         className="flex-1 justify-center h-full"
@@ -20,7 +20,7 @@ export default function App() {
               <CustomeButton
                 title="Sign Up"
                 containerStyle=" w-[50%] mt-7"
-                textStyle="text-blue text-white"
+                textStyle="text-white"
               />
             </View>
             <View className="w-[50%] justify-start">
@@ -44,7 +44,7 @@ export default function App() {
               <CustomeButton
                 title="Login"
                 containerStyle=" w-[50%] mt-7"
-                textStyle="text-blue text-white"
+                textStyle="text-white"
                 handlePress={() => router.push("sign-in")}
               />
             </View>
