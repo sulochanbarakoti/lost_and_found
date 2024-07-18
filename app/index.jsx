@@ -4,6 +4,7 @@ import images from "../constants/images";
 import CustomeButton from "../components/customeButton";
 import IconButton from "../components/iconButton";
 import icons from "../constants/icons";
+import { router } from "expo-router";
 
 export default function App() {
   return (
@@ -44,6 +45,7 @@ export default function App() {
                 title="Login"
                 containerStyle=" w-[50%] mt-7"
                 textStyle="text-blue text-white"
+                handlePress={() => router.push("sign-in")}
               />
             </View>
           </View>
