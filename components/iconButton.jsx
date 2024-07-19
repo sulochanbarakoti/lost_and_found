@@ -6,7 +6,6 @@ import {
   Image,
 } from "react-native";
 import React from "react";
-import icons from "../constants/icons";
 
 const IconButton = ({ handlePress, containerStyle, icon, isLoading }) => {
   return (

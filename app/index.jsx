@@ -8,7 +8,7 @@ import { router } from "expo-router";
 
 export default function App() {
   return (
-    <SafeAreaView className="h-full flex-1 bg-tertiary">
+    <SafeAreaView className="h-full flex-1">
       <ImageBackground
         source={images.backgroundImage}
         className="flex-1 justify-center h-full"
