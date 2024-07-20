@@ -35,7 +35,7 @@ const Home = () => {
               <View className="justify-center items-center">
                 <View className="border border-blue-50 w-[75%]"></View>
               </View>
-              <View className="flex-row items-center m-4 space-x-6 justify-center">
+              <View className="flex-row items-center m-4 space-x-8 justify-center">
                 <View className="bg-white h-[60px] w-[70px] rounded-lg justify-center items-center">
                   <MaterialIcons name="add-to-photos" size={45} color="black" />
                 </View>
@@ -53,6 +53,11 @@ const Home = () => {
                     color="black"
                   />
                 </View>
+              </View>
+              <View className="flex-row items-center space-x-14 justify-center">
+                <Text className="text-white font-semibold">Add Item</Text>
+                <Text className="text-white font-semibold">Chat</Text>
+                <Text className="text-white font-semibold">Shipment</Text>
               </View>
             </View>
           </View>
