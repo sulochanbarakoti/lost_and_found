@@ -1,4 +1,4 @@
-import { View, Text, ScrollView, Image } from "react-native";
+import { View, Text, ScrollView, Image, TouchableOpacity } from "react-native";
 import React from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import icons from "../../constants/icons";
@@ -11,6 +11,7 @@ import { images } from "../../constants";
 import TopBar from "../../components/topBar";
 import Notification from "../../components/notification";
 import Statistics from "../../components/statistics";
+import { router } from "expo-router";
 
 const Home = () => {
   return (
@@ -36,23 +37,26 @@ const Home = () => {
                 <View className="border border-blue-50 w-[75%]"></View>
               </View>
               <View className="flex-row items-center m-4 space-x-8 justify-center">
-                <View className="bg-white h-[60px] w-[70px] rounded-lg justify-center items-center">
+                <TouchableOpacity
+                  className="bg-white h-[60px] w-[70px] rounded-lg justify-center items-center"
+                  onPress={() => router.push("addItems")}
+                >
                   <MaterialIcons name="add-to-photos" size={45} color="black" />
-                </View>
-                <View className="bg-white h-[60px] w-[70px] rounded-lg justify-center items-center">
+                </TouchableOpacity>
+                <TouchableOpacity className="bg-white h-[60px] w-[70px] rounded-lg justify-center items-center">
                   <Ionicons
                     name="chatbubble-ellipses-outline"
                     size={45}
                     color="black"
                   />
-                </View>
-                <View className="bg-white h-[60px] w-[70px] rounded-lg justify-center items-center">
+                </TouchableOpacity>
+                <TouchableOpacity className="bg-white h-[60px] w-[70px] rounded-lg justify-center items-center">
                   <MaterialCommunityIcons
                     name="truck-delivery"
                     size={45}
                     color="black"
                   />
-                </View>
+                </TouchableOpacity>
               </View>
               <View className="flex-row items-center space-x-14 justify-center">
                 <Text className="text-white font-semibold">Add Item</Text>

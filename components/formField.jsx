@@ -1,7 +1,7 @@
 import { View, Text, TextInput } from "react-native";
 import React from "react";
 
-const FormField = ({ otherStyle, title }) => {
+const FormField = ({ otherStyle, title, textInputStyle }) => {
   return (
     <View className={`space-y-2 ${otherStyle}`}>
       <Text className="text-base font-bold text-2xl">{title}</Text>
