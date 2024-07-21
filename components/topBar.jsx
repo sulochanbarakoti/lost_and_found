@@ -1,13 +1,16 @@
-import { View, Text, Image } from "react-native";
+import { View, Text, Image, TouchableOpacity } from "react-native";
 import React from "react";
 import { FontAwesome } from "@expo/vector-icons";
+import { Link, router } from "expo-router";
 
 const TopBar = ({ title, image }) => {
   return (
     <View className="w-[95%] h-[45px] justify-center items-center bg-secondary mt-3 rounded-xl flex-row">
       {title !== "Home" && (
         <View>
-          <FontAwesome name="home" size={24} color="black" />
+          <Link href="home">
+            <FontAwesome name="home" size={24} color="black" />
+          </Link>
         </View>
       )}
 
@@ -15,11 +18,13 @@ const TopBar = ({ title, image }) => {
         {title}
       </Text>
       <View>
-        <Image
-          source={image}
-          className="w-[25px] h-[25px] items-end "
-          resizeMode="contain"
-        />
+        <TouchableOpacity onPress={() => router.push("profile")}>
+          <Image
+            source={image}
+            className="w-[25px] h-[25px] items-end "
+            resizeMode="contain"
+          />
+        </TouchableOpacity>
       </View>
     </View>
   );

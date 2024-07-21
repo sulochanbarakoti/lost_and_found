@@ -1,14 +1,23 @@
-import { View, Text } from "react-native";
-import React from "react";
+import { View, Text, TouchableOpacity } from "react-native";
+import React, { useState } from "react";
 
 const Statistics = () => {
+  const [active, setActive] = useState("Today");
+
   return (
     <View className="mt-3">
       <View className="flex-row space-x-8 bg-secondary p-2 rounded-lg opacity-60">
-        <Text className="text-white font-semibold">Today</Text>
-        <Text className="text-white font-semibold">1w</Text>
-        <Text className="text-white font-semibold">4w</Text>
-        <Text className="text-white font-semibold">1y</Text>
+        {["Today", "1w", "4w", "1y"].map((label) => (
+          <TouchableOpacity key={label} onPress={() => setActive(label)}>
+            <Text
+              className={`font-medium ${
+                active == label ? "text-black" : "text-white"
+              }`}
+            >
+              {label}
+            </Text>
+          </TouchableOpacity>
+        ))}
       </View>
       <View className="flex-row space-x-3">
         <View className="h-[90px] w-[180px] bg-gray-100 rounded-md mt-3">
