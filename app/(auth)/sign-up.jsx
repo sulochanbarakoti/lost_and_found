@@ -1,11 +1,24 @@
 import { View, Text, ScrollView, Image } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import FormField from "../../components/formField";
 import CustomeButton from "../../components/customeButton";
 import { Link, router } from "expo-router";
 
 const SignUp = () => {
+  const [form, setForm] = useState({
+    username: "",
+    email: "",
+    password: "",
+  });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const submit = () => {
+    setIsSubmitting(true);
+    console.log(form);
+  };
+
   return (
     <SafeAreaView className=" h-full">
       <ScrollView>
@@ -14,17 +27,29 @@ const SignUp = () => {
             Register to system
           </Text>
 
-          <FormField title="Username" otherStyle="mt-5" />
+          <FormField
+            title="Username"
+            otherStyle="mt-5"
+            handleChangeText={(e) => setForm({ ...form, username: e })}
+          />
 
-          <FormField title="Email" otherStyle="mt-5" />
+          <FormField
+            title="Email"
+            otherStyle="mt-5"
+            handleChangeText={(e) => setForm({ ...form, email: e })}
+          />
 
-          <FormField title="Password" otherStyle="mt-5" />
+          <FormField
+            title="Password"
+            otherStyle="mt-5"
+            handleChangeText={(e) => setForm({ ...form, password: e })}
+          />
 
           <CustomeButton
             title="Sign Up"
             containerStyle="mt-10"
             textStyle="text-white"
-            handlePress={() => router.push("home")}
+            handlePress={submit}
           />
 
           <View className="justify-center pt-5 flex-row gap-2">

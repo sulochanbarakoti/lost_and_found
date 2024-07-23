@@ -21,6 +21,7 @@ export default function App() {
                 title="Sign Up"
                 containerStyle=" w-[50%] mt-7"
                 textStyle="text-white"
+                handlePress={() => router.push("sign-up")}
               />
             </View>
             <View className="w-[50%] justify-start">
